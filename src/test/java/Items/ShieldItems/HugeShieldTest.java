@@ -1,5 +1,6 @@
 package Items.ShieldItems;
 
+import org.bukkit.Color;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -45,4 +46,10 @@ public class HugeShieldTest {
         Assert.assertFalse(hugeShield.isStackable());
     }
 
+    @Test
+    public void should_ReturnColourRarity_Orange(){
+        Color orange = Color.ORANGE;
+
+        Assert.assertEquals(orange,hugeShield.getRarityAsColor());
+    }
 }

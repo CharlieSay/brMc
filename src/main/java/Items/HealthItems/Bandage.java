@@ -1,6 +1,7 @@
 package Items.HealthItems;
 
 import Items.Stackable;
+import org.bukkit.Material;
 
 public class Bandage extends HealthItem implements Stackable {
 
@@ -9,17 +10,17 @@ public class Bandage extends HealthItem implements Stackable {
        super.consumeSpeed = 2;
        super.itemRarity = RARITY_LEVEL.COMMON;
        super.itemName = "Bandage";
-       super.itemID = 339; // PAPER
+       super.materialObject = Material.PAPER; // PAPER
     }
 
     @Override
     public boolean isStackable() {
-        return false;
+        return true;
     }
 
 
     @Override
     public int getMaxStackAmount() {
-        return 0;
+        return 10;
     }
 }
