@@ -10,7 +10,6 @@ public class CommonAssault extends Weapon {
         super.materialObject = Material.BOW;
         super.itemName = "Assault Rifle";
         super.damage = 30;
-        super.damagePerSecond = 165;
         super.magazineSize = 30;
         super.rateOfFire = 1;
         super.reloadTime = 2;
