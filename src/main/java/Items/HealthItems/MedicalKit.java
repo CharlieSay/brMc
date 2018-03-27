@@ -7,11 +7,11 @@ import org.bukkit.Material;
 public class MedicalKit extends HealthItem implements Stackable {
 
     public MedicalKit(){
-        super.healthValue = 100;
-        super.consumeSpeed = 10;
-        super.itemRarity = RARITY_LEVEL.UNCOMMON;
-        super.itemName = "Med Kit";
-        super.materialObject = Material.SLIME_BLOCK; //Slime Block
+        super.setConsumeSpeed(10);
+        super.setItemRarity(RARITY_LEVEL.UNCOMMON);
+        super.setItemName("Med Kit");
+        super.setMaterialObject(Material.SLIME_BLOCK);
+        super.setHealthValue(100);
     }
 
     @Override

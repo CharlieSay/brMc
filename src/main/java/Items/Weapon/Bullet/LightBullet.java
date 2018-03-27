@@ -4,11 +4,11 @@ import org.bukkit.Material;
 
 public class LightBullet extends Bullet {
 
+    private final int MAX_STACK_AMOUNT = 999;
+
     public LightBullet() {
-        currentStackAmount = 0;
-        super.materialObject = Material.ARROW;
-        super.itemName = "Light Bullets";
-        super.itemRarity = RARITY_LEVEL.COMMON;
+        super.setCurrentStackAmount(0);
+        super.setItemName("Light Bullets");
     }
 
     @Override
@@ -18,6 +18,6 @@ public class LightBullet extends Bullet {
 
     @Override
     public int getMaxStackAmount() {
-        return 999;
+        return MAX_STACK_AMOUNT;
     }
 }

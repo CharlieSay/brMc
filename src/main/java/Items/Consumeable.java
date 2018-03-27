@@ -2,7 +2,9 @@ package Items;
 
 public abstract class Consumeable extends Item implements Stackable{
 
-    public int consumeSpeed;
+    private int consumeSpeed;
+
+    public void setConsumeSpeed(int consumeSpeed) { this.consumeSpeed = consumeSpeed; }
 
     public int getConsumeSpeed(){
         return consumeSpeed;

@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class MiniShieldTest {
 
-    static Shield miniShield;
+    private static Shield miniShield;
 
     @BeforeClass
     public static void setUpObject(){
@@ -14,8 +14,8 @@ public class MiniShieldTest {
     }
 
     @Test
-    public void should_Return25_WhenValueOfShieldIsCalled(){
-        int miniShieldValueShouldBe = 25;
+    public void should_Return15_WhenValueOfShieldIsCalled(){
+        int miniShieldValueShouldBe = 15;
         int resultOfMiniShieldValue = miniShield.getShieldValue();
 
         Assert.assertEquals(miniShieldValueShouldBe,resultOfMiniShieldValue);

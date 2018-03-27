@@ -5,11 +5,11 @@ import org.bukkit.Material;
 public class HugeShield extends Shield{
 
     public HugeShield() {
-        super.shieldValue = 100;
-        super.consumeSpeed = 15;
-        super.itemRarity = RARITY_LEVEL.LEGENDARY;
-        super.itemName = "Huge Shield";
-        super.materialObject = Material.LAVA_BUCKET;
+        super.setConsumeSpeed(15);
+        super.setItemRarity(RARITY_LEVEL.LEGENDARY);
+        super.setItemName("Huge Shield");
+        super.setMaterialObject(Material.LAVA_BUCKET);
+        super.setShieldValue(100);
     }
 
     @Override

@@ -8,12 +8,12 @@ public class MiniShield extends Shield implements Stackable{
     private int maxStackAmount;
 
     public MiniShield() {
-        super.shieldValue = 25;
-        super.consumeSpeed = 2;
-        super.itemRarity = RARITY_LEVEL.UNCOMMON;
+        super.setConsumeSpeed(2);
+        super.setItemRarity(RARITY_LEVEL.UNCOMMON);
+        super.setItemName("Mini Shield");
+        super.setMaterialObject(Material.POTION);
+        super.setShieldValue(15);
         maxStackAmount = 10;
-        super.itemName = "Mini Shield";
-        super.materialObject = Material.POTION;
     }
 
     @Override

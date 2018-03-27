@@ -8,11 +8,11 @@ AR
 
 public class MediumBullet extends Bullet {
 
+    private final int MAX_STACK_AMOUNT = 999;
+
     public MediumBullet() {
-        currentStackAmount = 0;
-        super.materialObject = Material.ARROW;
-        super.itemName = "Medium Bullets";
-        super.itemRarity = RARITY_LEVEL.COMMON;
+        super.setCurrentStackAmount(0);
+        super.setItemName("Medium Bullets");
     }
 
     @Override
@@ -22,6 +22,6 @@ public class MediumBullet extends Bullet {
 
     @Override
     public int getMaxStackAmount() {
-        return 999;
+        return MAX_STACK_AMOUNT;
     }
 }

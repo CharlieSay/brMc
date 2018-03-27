@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class HugeShieldTest {
 
-    static Shield hugeShield;
+    private static Shield hugeShield;
 
     @BeforeClass
     public static void setUpObject(){

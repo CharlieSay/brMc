@@ -1,18 +1,19 @@
 package Items.Weapon.Bullet;
 
 import Items.Explodeable;
-import org.bukkit.Effect;
-import org.bukkit.FireworkEffect;
-import org.bukkit.Material;
-import org.bukkit.Sound;
+import org.bukkit.*;
+
+import java.util.Random;
 
 public class RocketBullet extends Bullet implements Explodeable{
 
+    private final int MAX_STACK_AMOUNT = 250;
+
     public RocketBullet() {
-        currentStackAmount = 0;
-        super.materialObject = Material.ARROW;
-        super.itemName = "Rockets";
-        super.itemRarity = RARITY_LEVEL.COMMON;
+        super.setCurrentStackAmount(0);
+        super.setItemName("Rockets");
+        super.setItemRarity(RARITY_LEVEL.RARE);
+        super.setMaterialObject(Material.BLAZE_ROD);
     }
 
     @Override
@@ -22,7 +23,7 @@ public class RocketBullet extends Bullet implements Explodeable{
 
     @Override
     public int getMaxStackAmount() {
-        return 250;
+        return MAX_STACK_AMOUNT;
     }
 
     @Override
@@ -37,6 +38,14 @@ public class RocketBullet extends Bullet implements Explodeable{
 
     @Override
     public FireworkEffect explodeFireWorkEffect() {
-        return FireworkEffect.builder().build();
+        Random random = new Random();
+        FireworkEffect fireworkEffect = FireworkEffect.builder()
+                .flicker(random.nextBoolean())
+                .withColor(Color.RED)
+                .withFade(Color.ORANGE)
+                .with(FireworkEffect.Type.BURST)
+                .trail(random.nextBoolean())
+                .build();
+        return fireworkEffect;
     }
 }

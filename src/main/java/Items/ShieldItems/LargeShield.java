@@ -7,12 +7,12 @@ public class LargeShield extends Shield{
     private int maxStackAmount;
 
     public LargeShield() {
-        super.shieldValue = 50;
-        super.consumeSpeed = 5;
-        super.itemRarity = RARITY_LEVEL.RARE;
+        super.setConsumeSpeed(5);
+        super.setItemRarity(RARITY_LEVEL.RARE);
+        super.setItemName("Huge Shield");
+        super.setMaterialObject(Material.WATER_BUCKET);
+        super.setShieldValue(50);
         maxStackAmount = 3;
-        super.itemName = "Large Shield";
-        super.materialObject = Material.WATER_BUCKET;
     }
 
     @Override

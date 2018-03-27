@@ -6,11 +6,11 @@ import org.bukkit.Material;
 public class Bandage extends HealthItem implements Stackable {
 
     public Bandage(){
-       super.healthValue = 15;
-       super.consumeSpeed = 2;
-       super.itemRarity = RARITY_LEVEL.COMMON;
-       super.itemName = "Bandage";
-       super.materialObject = Material.PAPER; // PAPER
+        super.setConsumeSpeed(2);
+        super.setItemRarity(RARITY_LEVEL.COMMON);
+        super.setItemName("Bandage");
+        super.setMaterialObject(Material.PAPER);
+        super.setHealthValue(15);
     }
 
     @Override

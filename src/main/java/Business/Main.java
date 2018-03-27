@@ -8,7 +8,6 @@ import java.util.logging.Level;
 public class Main extends JavaPlugin{
 
     public static void main(String[] args) {
-
     }
 
     @Override
