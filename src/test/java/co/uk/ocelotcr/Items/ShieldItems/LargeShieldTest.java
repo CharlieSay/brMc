@@ -1,7 +1,5 @@
 package co.uk.ocelotcr.Items.ShieldItems;
 
-import co.uk.ocelotcr.Items.ShieldItems.LargeShield;
-import co.uk.ocelotcr.Items.ShieldItems.Shield;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;

@@ -33,7 +33,7 @@ public class CommonAssaultTest {
         Item.RARITY_LEVEL rarityShouldBe = Item.RARITY_LEVEL.COMMON;
         Color colorShouldBe = Color.GRAY;
         int damageShouldBe = 30;
-        int dpsShouldBe = 30;
+        int dpsShouldBe = 150;
         int magSizeShouldBe = 30;
         int reloadTimeShouldBe = 2;
 
