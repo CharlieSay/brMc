@@ -1,4 +1,4 @@
-package co.uk.ocelotcr.Business;
+package co.uk.ocelotcr.Listener;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginLogger;
@@ -16,7 +16,7 @@ public class BattleRoyaleMinecraft extends JavaPlugin{
     public void onEnable(){
         PluginLogger.getGlobal().log(Level.INFO,"Enabled - brMc");
         PluginManager pluginManager = Bukkit.getPluginManager();
-        pluginManager.registerEvents(new PlayerListener(),this);
+        pluginManager.registerEvents(new PickupListener(),this);
     }
 
     @Override

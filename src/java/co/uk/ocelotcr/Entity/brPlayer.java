@@ -2,14 +2,15 @@ package co.uk.ocelotcr.Entity;
 
 import org.bukkit.entity.Player;
 
-/*
-This class is ONLY FOR WHEN THE GAME HAS STARTED HENCE BRPLAYER.
+/**
+ * This is only used when game has started.
+ *
+ * @Param bukkitPlayer - usage of Bukkit Player, not custom player.
+ * @Param playerHealth - Current Health
+ * @Param playerShield - Current Shield
+*/
 
-Do NOT Use this outside of the game STARTING.
-
- */
-
-public class brPlayer {
+public class brPlayer{
 
     private int playerHealth;
     private int playerShield;

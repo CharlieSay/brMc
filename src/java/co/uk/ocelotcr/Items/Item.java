@@ -51,14 +51,16 @@ public abstract class Item {
     }
 
     public ChatColor getRarityForChatColor(){
+        if (itemRarity != null){
         switch(itemRarity){
             case LEGENDARY: return ChatColor.GOLD;
             case EPIC: return ChatColor.LIGHT_PURPLE;
             case RARE: return ChatColor.BLUE;
             case UNCOMMON: return ChatColor.GREEN;
             case COMMON: return ChatColor.GRAY;
-            default: return ChatColor.RESET;
+            }
         }
+        return ChatColor.RESET;
     }
 
     public enum RARITY_LEVEL{

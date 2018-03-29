@@ -4,7 +4,7 @@ import co.uk.ocelotcr.Items.Item;
 import co.uk.ocelotcr.Items.Stackable;
 import org.bukkit.Material;
 
-public abstract class Bullet extends Item implements Stackable{
+public abstract class Bullet extends Item implements Stackable {
 
     private int currentStackAmount;
 
