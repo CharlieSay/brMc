@@ -7,8 +7,15 @@ import co.uk.ocelotcr.Items.Weapon.Assault.CommonAssault;
 import co.uk.ocelotcr.Items.Weapon.Assault.EpicAssault;
 import co.uk.ocelotcr.Items.Weapon.Assault.LegendaryAssault;
 import org.bukkit.ChatColor;
+import org.bukkit.Color;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 import org.junit.Assert;
 import org.junit.Test;
+import org.mockito.Mockito;
+
+import static org.mockito.Mockito.mock;
 
 public class ItemTest {
 
@@ -63,5 +70,14 @@ public class ItemTest {
         Assert.assertEquals(resetColour,item.getRarityForChatColor());
     }
 
+    @Test
+    public void should_ReturnGreyColor_IfNoRarity(){
+        item = new Bandage();
+        item.setItemRarity(null);
+
+        Color greyColour = Color.GRAY;
+
+        Assert.assertEquals(greyColour,item.getRarityAsColor());
+    }
 
 }

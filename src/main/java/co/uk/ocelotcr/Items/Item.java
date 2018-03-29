@@ -12,9 +12,14 @@ public abstract class Item {
     private String itemName;
     private RARITY_LEVEL itemRarity;
 
+    public String getMetaStringName(){
+        return getRarityForChatColor() + getItemName();
+    }
+
     public void setMetaOnMaterial(ItemStack itemStack){
-        ItemMeta itemMeta = itemStack.getItemMeta();
-        itemMeta.setDisplayName(ChatColor.getByChar(getItemRarity().toString()) + getItemName());
+     //   ItemMeta itemMeta = itemStack.getItemMeta();
+        itemStack.getItemMeta().setDisplayName(getRarityForChatColor() + getItemName());
+     //   itemStack.setItemMeta(itemMeta);
     }
 
     public void setMaterialObject(Material materialObject) {
@@ -34,32 +39,33 @@ public abstract class Item {
     public RARITY_LEVEL getItemRarity() { return itemRarity; }
 
     public Color getRarityAsColor(){
-        switch(itemRarity){
-            case LEGENDARY:
-                return Color.ORANGE;
-            case EPIC:
-                return Color.PURPLE;
-            case RARE:
-                return Color.BLUE;
-            case UNCOMMON:
-                return Color.GREEN;
-            case COMMON:
-                return Color.GRAY;
-            default:
-                return Color.GRAY;
+        if (itemRarity != null){
+            switch(itemRarity){
+                case LEGENDARY:
+                    return Color.ORANGE;
+                case EPIC:
+                    return Color.PURPLE;
+                case RARE:
+                    return Color.BLUE;
+                case UNCOMMON:
+                    return Color.GREEN;
+                case COMMON:
+                    return Color.GRAY;
+            }
         }
+        return Color.GRAY;
     }
 
     public ChatColor getRarityForChatColor(){
         if (itemRarity != null){
-        switch(itemRarity){
-            case LEGENDARY: return ChatColor.GOLD;
-            case EPIC: return ChatColor.LIGHT_PURPLE;
-            case RARE: return ChatColor.BLUE;
-            case UNCOMMON: return ChatColor.GREEN;
-            case COMMON: return ChatColor.GRAY;
+            switch(itemRarity){
+                case LEGENDARY: return ChatColor.GOLD;
+                case EPIC: return ChatColor.LIGHT_PURPLE;
+                case RARE: return ChatColor.BLUE;
+                case UNCOMMON: return ChatColor.GREEN;
+                case COMMON: return ChatColor.GRAY;
+                }
             }
-        }
         return ChatColor.RESET;
     }
 

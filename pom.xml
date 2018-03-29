@@ -41,8 +41,8 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.0</version>
                 <configuration>
-                    <destFile>${basedir}/target/coverage-reports/jacoco-unit.exec</destFile>
-                    <dataFile>${basedir}/target/coverage-reports/jacoco-unit.exec</dataFile>
+                    <destFile>target/coverage-reports/jacoco-unit.exec</destFile>
+                    <dataFile>target/coverage-reports/jacoco-unit.exec</dataFile>
                 </configuration>
                 <executions>
                     <execution>
@@ -84,6 +84,14 @@
             <groupId>org.xerial</groupId>
             <artifactId>sqlite-jdbc</artifactId>
             <version>3.21.0.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.mockito/mockito-all -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>1.10.19</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>

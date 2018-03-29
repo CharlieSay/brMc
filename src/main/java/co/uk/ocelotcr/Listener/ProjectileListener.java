@@ -1,6 +1,7 @@
 package co.uk.ocelotcr.Listener;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -16,6 +17,10 @@ public class ProjectileListener implements Listener {
         if (projectileSource instanceof Player){
             Player p = (Player) projectileSource;
             Bukkit.broadcastMessage("Projectile Launch Event by " + p.getDisplayName());
+            if (p.getInventory().getItemInMainHand().getItemMeta().getDisplayName()
+                    == (ChatColor.BLUE+"Assault Rifle - Rare")){
+                Bukkit.broadcastMessage("He Had an rare AR");
+            }
         }
 
     }
