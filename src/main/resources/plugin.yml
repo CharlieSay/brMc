@@ -1,3 +1,10 @@
 name: BattleRoyale_MC
 main: co.uk.ocelotcr.Listener.BattleRoyaleMinecraft
 version: 0.0.1
+database: false
+author: OcelotcR
+description: Other Level
+commands:
+    cleantest:
+        description: test Command
+        usage: Simply type the CMD.

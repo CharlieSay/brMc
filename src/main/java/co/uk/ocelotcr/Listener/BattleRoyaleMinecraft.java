@@ -31,17 +31,14 @@ public class BattleRoyaleMinecraft extends JavaPlugin{
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (command.getName().equalsIgnoreCase("rainDownMan")){
-            Player p = getCurrentPlayerList().get(0);
+        if (command.getName().equalsIgnoreCase("cleantest")){
+            Player p = (Player) sender;
             Location location = p.getLocation();
             location.getWorld().playEffect(location,Effect.ANVIL_BREAK,100);
+            p.setTotalExperience(1000);
+            Bukkit.broadcastMessage("YOOO HE DID IT");
+            return true;
         }
-        return super.onCommand(sender, command, label, args);
+        return false;
     }
-
-
-    @Override
-    public void onDisable(){
-    }
-
 }
