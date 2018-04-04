@@ -38,6 +38,9 @@ public class BattleRoyaleMinecraft extends JavaPlugin{
             p.setTotalExperience(1000);
             Bukkit.broadcastMessage("YOOO HE DID IT");
             return true;
+        }else if(command.getName().equalsIgnoreCase("arrowrain")){
+            funnyShoot FunnyShoot = new funnyShoot();
+            FunnyShoot.shootemUp((Player) sender);
         }
         return false;
     }

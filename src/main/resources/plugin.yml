@@ -8,3 +8,6 @@ commands:
     cleantest:
         description: test Command
         usage: Simply type the CMD.
+    arrowrain:
+        description: test Arrow
+        usage: arrowBarrage
