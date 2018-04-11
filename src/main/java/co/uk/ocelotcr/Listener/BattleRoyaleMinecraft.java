@@ -11,13 +11,25 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginLogger;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitScheduler;
 import org.bukkit.scoreboard.Scoreboard;
 
 import java.util.logging.Level;
 
 public class BattleRoyaleMinecraft extends JavaPlugin{
 
-    Scoreboard scoreboard;
+    private Scoreboard scoreboard;
+    private BukkitScheduler scheduler;
+
+    public static BattleRoyaleMinecraft getBrInstance() {
+        return brInstance;
+    }
+
+    private static BattleRoyaleMinecraft brInstance;
+
+    public BukkitScheduler getScheduler() {
+        return scheduler;
+    }
 
     @Override
     public void onEnable(){
@@ -29,6 +41,8 @@ public class BattleRoyaleMinecraft extends JavaPlugin{
         Bukkit.setDefaultGameMode(GameMode.ADVENTURE);
         ScoreboardController scoreboardController = new ScoreboardController();
         scoreboard = scoreboardController.getScoreBoard();
+        scheduler = Bukkit.getScheduler();
+        brInstance = this;
     }
 
     @Override
