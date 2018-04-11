@@ -41,6 +41,7 @@ public class ProjectileListener implements Listener {
         ProjectileSource projectileSource = e.getEntity().getShooter();
         if (projectileSource instanceof Player){
             Bukkit.getLogger().log(Level.INFO, "Hit by " + ((Player) projectileSource).getDisplayName());
+
         }
 
     }

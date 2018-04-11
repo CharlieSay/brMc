@@ -14,12 +14,17 @@ public class brPlayer{
 
     private int playerHealth;
     private int playerShield;
+
     private Player bukkitPlayer;
 
     public brPlayer(Player bukkitPlayer){
         this.bukkitPlayer = bukkitPlayer;
         playerHealth = 100;
         playerShield = 0;
+    }
+
+    public Player getBukkitPlayer() {
+        return bukkitPlayer;
     }
 
 }
