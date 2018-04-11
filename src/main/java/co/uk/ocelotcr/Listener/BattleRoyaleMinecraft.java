@@ -2,18 +2,16 @@ package co.uk.ocelotcr.Listener;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Effect;
+import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
-import org.bukkit.command.PluginCommand;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginLogger;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Level;
-
-import static co.uk.ocelotcr.Listener.StateListener.*;
 
 public class BattleRoyaleMinecraft extends JavaPlugin{
 
@@ -27,6 +25,7 @@ public class BattleRoyaleMinecraft extends JavaPlugin{
         pluginManager.registerEvents(new PickupListener(),this);
         pluginManager.registerEvents(new ProjectileListener(),this);
         pluginManager.registerEvents(new StateListener(),this);
+        Bukkit.setDefaultGameMode(GameMode.ADVENTURE);
     }
 
     @Override

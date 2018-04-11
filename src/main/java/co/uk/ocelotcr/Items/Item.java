@@ -17,9 +17,9 @@ public abstract class Item {
     }
 
     public void setMetaOnMaterial(ItemStack itemStack){
-     //   ItemMeta itemMeta = itemStack.getItemMeta();
-        itemStack.getItemMeta().setDisplayName(getRarityForChatColor() + getItemName());
-     //   itemStack.setItemMeta(itemMeta);
+        ItemMeta itemMeta = itemStack.getItemMeta();
+        itemMeta.setDisplayName(getRarityForChatColor() + getItemName());
+        itemStack.setItemMeta(itemMeta);
     }
 
     public void setMaterialObject(Material materialObject) {
@@ -73,8 +73,8 @@ public abstract class Item {
         LEGENDARY, //Orange
         EPIC, //Purple
         RARE, //Blue
-        UNCOMMON,//Green
-        COMMON//Grey
+        UNCOMMON, //Green
+        COMMON //Grey
     }
 
 }

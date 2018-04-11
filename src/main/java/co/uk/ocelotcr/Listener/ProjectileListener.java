@@ -9,6 +9,8 @@ import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.entity.ProjectileLaunchEvent;
 import org.bukkit.projectiles.ProjectileSource;
 
+import java.util.logging.Level;
+
 public class ProjectileListener implements Listener {
 
     @EventHandler
@@ -29,9 +31,7 @@ public class ProjectileListener implements Listener {
     public void projectileHit(ProjectileHitEvent e){
         ProjectileSource projectileSource = e.getEntity().getShooter();
         if (projectileSource instanceof Player){
-            Player p = (Player) projectileSource;
-            Bukkit.broadcastMessage("Projectile Hit Event by" + p.getDisplayName());
-            Bukkit.broadcastMessage(e.getHitBlock().toString());
+            Bukkit.getLogger().log(Level.INFO, "Hit by " + ((Player) projectileSource).getDisplayName());
         }
 
     }
