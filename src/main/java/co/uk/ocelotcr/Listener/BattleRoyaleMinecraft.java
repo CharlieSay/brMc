@@ -30,16 +30,20 @@ public class BattleRoyaleMinecraft extends JavaPlugin{
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (command.getName().equalsIgnoreCase("cleantest")){
+        if (sender instanceof Player){
             Player p = (Player) sender;
-            Location location = p.getLocation();
-            location.getWorld().playEffect(location,Effect.ANVIL_BREAK,100);
-            p.setTotalExperience(1000);
-            Bukkit.broadcastMessage("YOOO HE DID IT");
-            return true;
-        }else if(command.getName().equalsIgnoreCase("arrowrain")){
-            funnyShoot FunnyShoot = new funnyShoot();
-            FunnyShoot.shootemUp((Player) sender);
+            if (command.getName().equalsIgnoreCase("cleantest")){
+                Location location = p.getLocation();
+                location.getWorld().playEffect(location,Effect.ANVIL_BREAK,100);
+                p.setTotalExperience(1000);
+                Bukkit.getLogger().log(Level.INFO, "Clean Test execute");
+            }else if(command.getName().equalsIgnoreCase("arrowrain")){
+                funnyShoot FunnyShoot = new funnyShoot();
+                FunnyShoot.shootemUp((Player) sender);
+                Bukkit.getLogger().log(Level.INFO, "Rain Arrows execute");
+            }
+        }else{
+            Bukkit.getLogger().log(Level.INFO, "Illegal Command Sender");
         }
         return false;
     }

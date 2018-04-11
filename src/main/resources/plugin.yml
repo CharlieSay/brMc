@@ -5,9 +5,5 @@ database: false
 author: OcelotcR
 description: Other Level
 commands:
-    cleantest:
-        description: test Command
-        usage: Simply type the CMD.
-    arrowrain:
-        description: test Arrow
-        usage: arrowBarrage
+  cleantest:
+  arrowrain:
