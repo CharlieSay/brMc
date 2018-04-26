@@ -4,6 +4,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.scoreboard.*;
 
+import java.util.logging.Level;
+
 public class ScoreboardController{
 
     private Objective objective;
@@ -17,6 +19,7 @@ public class ScoreboardController{
         playerInformationTeam.addEntry(ChatColor.AQUA + " Shield");
         objective = scoreBoard.registerNewObjective("Player Info","dummy");
         objective.setDisplaySlot(DisplaySlot.SIDEBAR);
+        Bukkit.getLogger().log(Level.INFO,"Scoreboard Control ");
     }
 
     public Objective getObjective() {

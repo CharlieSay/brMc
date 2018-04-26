@@ -1,6 +1,7 @@
 package co.uk.ocelotcr.Listener;
 
-import co.uk.ocelotcr.Controller.ScoreboardController;
+import co.uk.ocelotcr.Controller.GameController;
+import co.uk.ocelotcr.Controller.GameState;
 import org.bukkit.Bukkit;
 import org.bukkit.Effect;
 import org.bukkit.GameMode;
@@ -39,15 +40,13 @@ public class BattleRoyaleMinecraft extends JavaPlugin{
         pluginManager.registerEvents(new ProjectileListener(),this);
         pluginManager.registerEvents(new StateListener(),this);
         Bukkit.setDefaultGameMode(GameMode.ADVENTURE);
-        ScoreboardController scoreboardController = new ScoreboardController();
-        scoreboard = scoreboardController.getScoreBoard();
         scheduler = Bukkit.getScheduler();
         brInstance = this;
     }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (sender instanceof Player){
+        if (sender instanceof Player && GameController.getCurrentState() == GameState.LOBBY){
             Player p = (Player) sender;
             if (command.getName().equalsIgnoreCase("cleantest")){
                 Location location = p.getLocation();
