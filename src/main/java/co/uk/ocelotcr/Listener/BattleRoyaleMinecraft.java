@@ -46,7 +46,7 @@ public class BattleRoyaleMinecraft extends JavaPlugin{
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (sender instanceof Player && GameController.getCurrentState() == GameState.LOBBY){
+        if (sender instanceof Player && GameController.getCurrentState() == GameState.IN_LOBBY){
             Player p = (Player) sender;
             if (command.getName().equalsIgnoreCase("cleantest")){
                 Location location = p.getLocation();
@@ -54,8 +54,8 @@ public class BattleRoyaleMinecraft extends JavaPlugin{
                 p.setTotalExperience(1000);
                 Bukkit.getLogger().log(Level.INFO, "Clean Test execute");
             }else if(command.getName().equalsIgnoreCase("arrowrain")){
-                funnyShoot FunnyShoot = new funnyShoot();
-                FunnyShoot.shootemUp((Player) sender);
+                FunnyShoot FunnyShoot = new FunnyShoot();
+                FunnyShoot.shootemUp((Player) sender,5);
                 Bukkit.getLogger().log(Level.INFO, "Rain Arrows execute");
             }
         }else{

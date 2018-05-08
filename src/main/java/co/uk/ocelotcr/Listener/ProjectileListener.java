@@ -22,18 +22,21 @@ public class ProjectileListener implements Listener {
         if (projectileSource instanceof Player){
             Player p = (Player) projectileSource;
             Bukkit.broadcastMessage("Projectile Launch Event by " + p.getDisplayName());
-            if (p.getInventory().getItemInMainHand().getItemMeta().getDisplayName() == (ChatColor.BLUE+"Assault Rifle - Rare")){
-                Bukkit.getScheduler().scheduleSyncRepeatingTask(BattleRoyaleMinecraft.getBrInstance(),
-                        () -> {
-                            shootTimer -= 1;
-                            p.launchProjectile(Arrow.class).setCritical(true);
-                            if (shootTimer==0){
-                                Bukkit.getScheduler().cancelAllTasks();
-                            }
-                        },0L,10L);
-            }
         }
 
+    }
+
+    private void runTask(Player p){
+        if (p.getInventory().getItemInMainHand().getItemMeta().getDisplayName() == (ChatColor.BLUE+"Assault Rifle - Rare")){
+            Bukkit.getScheduler().scheduleSyncRepeatingTask(BattleRoyaleMinecraft.getBrInstance(),
+                    () -> {
+                        shootTimer -= 1;
+                        p.launchProjectile(Arrow.class).setCritical(true);
+                        if (shootTimer==0){
+                            Bukkit.getScheduler().cancelAllTasks();
+                        }
+                    },0L,10L);
+        }
     }
 
     @EventHandler
