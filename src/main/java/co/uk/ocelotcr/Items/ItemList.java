@@ -18,7 +18,7 @@ public class ItemList {
 
     public static boolean isItemOnlist(Material material){
         for (Item iterationItem : itemReferenceList){
-            if (iterationItem.getItemMaterial().equals(material)){
+            if (iterationItem.equals(material)){
                 return true;
             }
         }

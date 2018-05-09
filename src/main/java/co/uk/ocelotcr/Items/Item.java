@@ -12,16 +12,11 @@ public abstract class Item {
     private String itemName;
     private RARITY_LEVEL itemRarity;
 
-    public String getMetaStringName(){
-        return getRarityForChatColor() + getItemName();
-    }
-
     public void setMetaOnMaterial(ItemStack itemStack){
         ItemMeta itemMeta = itemStack.getItemMeta();
         itemMeta.setDisplayName(getRarityForChatColor() + getItemName());
         itemStack.setItemMeta(itemMeta);
     }
-
     public void setMaterialObject(Material materialObject) {
         this.materialObject = materialObject;
     }
@@ -32,6 +27,9 @@ public abstract class Item {
         this.itemRarity = itemRarity;
     }
 
+    public String getMetaStringName(){
+        return getRarityForChatColor() + getItemName();
+    }
     public String getItemName() {
         return itemName;
     }
@@ -77,4 +75,7 @@ public abstract class Item {
         COMMON //Grey
     }
 
+    public boolean equals(Item obj) {
+        return obj.getItemName().equals(this.getItemName());
+    }
 }
