@@ -27,6 +27,7 @@ public class BrPlayer {
 
     public BrPlayer(Player bukkitPlayer){
         this.bukkitPlayer = bukkitPlayer;
+        playerSetUp();
     }
 
     private void playerSetUp(){
@@ -34,6 +35,7 @@ public class BrPlayer {
         playerShield = 0;
         currentlyShooting = false;
         bukkitPlayer.getInventory().clear();
+
         AssaultRifle rareAssault = new RareAssault();
         ItemStack rareAr = new ItemStack(rareAssault.getItemMaterial());
         ItemMeta rareArItemMeta = rareAr.getItemMeta();

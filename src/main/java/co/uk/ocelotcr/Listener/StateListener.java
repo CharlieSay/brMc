@@ -9,14 +9,12 @@ import org.bukkit.event.player.PlayerQuitEvent;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.List;
 
 public class StateListener implements Listener {
 
     private static final HashMap<Player, BrPlayer> currentPlayerList;
 
-     static {
+    static {
         currentPlayerList = new LinkedHashMap<>();
     }
 
