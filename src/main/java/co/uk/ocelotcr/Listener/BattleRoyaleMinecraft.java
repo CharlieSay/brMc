@@ -1,11 +1,11 @@
 package co.uk.ocelotcr.Listener;
 
+import co.uk.ocelotcr.Commands.ArrowRain;
+import co.uk.ocelotcr.Commands.CleanTest;
 import co.uk.ocelotcr.Controller.GameController;
 import co.uk.ocelotcr.Controller.GameState;
 import org.bukkit.Bukkit;
-import org.bukkit.Effect;
 import org.bukkit.GameMode;
-import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -49,14 +49,9 @@ public class BattleRoyaleMinecraft extends JavaPlugin{
         if (sender instanceof Player && GameController.getCurrentState() == GameState.IN_LOBBY){
             Player p = (Player) sender;
             if (command.getName().equalsIgnoreCase("cleantest")){
-                Location location = p.getLocation();
-                location.getWorld().playEffect(location,Effect.ANVIL_BREAK,100);
-                p.setTotalExperience(1000);
-                Bukkit.getLogger().log(Level.INFO, "Clean Test execute");
+                CleanTest.PerformCommand(p);
             }else if(command.getName().equalsIgnoreCase("arrowrain")){
-                FunnyShoot FunnyShoot = new FunnyShoot();
-                FunnyShoot.shootemUp((Player) sender,5);
-                Bukkit.getLogger().log(Level.INFO, "Rain Arrows execute");
+                ArrowRain.PerformCommand(p);
             }
         }else{
             Bukkit.getLogger().log(Level.INFO, "Illegal Command Sender");
