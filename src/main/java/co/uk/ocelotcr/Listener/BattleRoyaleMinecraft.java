@@ -49,9 +49,9 @@ public class BattleRoyaleMinecraft extends JavaPlugin{
         if (sender instanceof Player && GameController.getCurrentState() == GameState.IN_LOBBY){
             Player p = (Player) sender;
             if (command.getName().equalsIgnoreCase("cleantest")){
-                CleanTest.PerformCommand(p);
+                 new CleanTest().PerformCommand(p);
             }else if(command.getName().equalsIgnoreCase("arrowrain")){
-                ArrowRain.PerformCommand(p);
+                new ArrowRain().PerformCommand(p);
             }
         }else{
             Bukkit.getLogger().log(Level.INFO, "Illegal Command Sender");

@@ -24,4 +24,20 @@ public class PlayerController {
         return null;
     }
 
+    public void setShieldOnPlayer(Player player){
+        for (BrPlayer brPlayer : playerList){
+            if (brPlayer.getBukkitPlayer().equals(player)){
+                brPlayer.setPlayerShield(brPlayer.getPlayerShield()+50);
+            }
+        }
+    }
+
+    public void removeShield(Player player){
+        for (BrPlayer brPlayer : playerList){
+            if (brPlayer.getBukkitPlayer().equals(player)){
+                brPlayer.setPlayerShield(brPlayer.getPlayerShield()-25);
+            }
+        }
+    }
+
 }

@@ -6,11 +6,13 @@ import org.bukkit.entity.Player;
 
 import java.util.logging.Level;
 
-public class ArrowRain {
+public class ArrowRain implements Command {
 
-    public static void PerformCommand(Player player) {
+    @Override
+    public void PerformCommand(Player player) {
         FunnyShoot FunnyShoot = new FunnyShoot();
         FunnyShoot.shootemUp(player,5);
         Bukkit.getLogger().log(Level.INFO, "Rain Arrows execute");
     }
+
 }

@@ -18,10 +18,10 @@ public class PickupListener implements Listener{
             Player player = (Player) e;
             Item itemPickup = e.getItem();
             if (ItemList.isItemOnlist(itemPickup.getItemStack().getType())){
-                Bukkit.getLogger().log(Level.INFO,"Is an item that we made.");
+                player.sendRawMessage("Is an item that we made.");
             }else{
+                player.sendRawMessage("Isnt an item that we made.");
                 e.setCancelled(true);
-                Bukkit.getLogger().log(Level.INFO,"Isnt an item that we made.");
             }
         }
     }

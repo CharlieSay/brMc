@@ -7,11 +7,14 @@ import org.bukkit.entity.Player;
 
 import java.util.logging.Level;
 
-public class CleanTest {
-    public static void PerformCommand(Player p) {
-        Location location = p.getLocation();
+public class CleanTest implements Command {
+
+    @Override
+    public void PerformCommand(Player player) {
+        Location location = player.getLocation();
         location.getWorld().playEffect(location,Effect.ANVIL_BREAK,100);
-        p.setTotalExperience(1000);
+        player.setTotalExperience(1000);
         Bukkit.getLogger().log(Level.INFO, "Clean Test execute");
     }
+
 }

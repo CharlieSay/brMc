@@ -21,33 +21,33 @@ import java.util.logging.Level;
 public class BrPlayer {
 
     private boolean currentlyShooting;
+
+    public int getPlayerHealth() {
+        return playerHealth;
+    }
+
+    public void setPlayerHealth(int playerHealth) {
+        this.playerHealth = playerHealth;
+    }
+
+    public int getPlayerShield() {
+        return playerShield;
+    }
+
+    public void setPlayerShield(int playerShield) {
+        this.playerShield = playerShield;
+    }
+
     private int playerHealth;
     private int playerShield;
     private Player bukkitPlayer;
 
     public BrPlayer(Player bukkitPlayer){
         this.bukkitPlayer = bukkitPlayer;
-        playerSetUp();
-    }
-
-    private void playerSetUp(){
         playerHealth = 100;
         playerShield = 0;
         currentlyShooting = false;
         bukkitPlayer.getInventory().clear();
-
-        AssaultRifle rareAssault = new RareAssault();
-        ItemStack rareAr = new ItemStack(rareAssault.getItemMaterial());
-        ItemMeta rareArItemMeta = rareAr.getItemMeta();
-
-        rareArItemMeta.setDisplayName(rareAssault.getMetaStringName());
-        rareArItemMeta.setLore(Arrays.asList("Damage : "+rareAssault.getDamage(),"DPS : "+rareAssault.getDamagePerSecond(),"Rarity : " + rareAssault.getItemRarity()));
-        rareAr.setItemMeta(rareArItemMeta);
-
-        Bukkit.getLogger().log(Level.INFO,"Item Name " + rareAr.getItemMeta().getDisplayName());
-        bukkitPlayer.getInventory().setItemInMainHand(rareAr);
-        bukkitPlayer.sendMessage("Take an AR Mate.");
-        Bukkit.broadcastMessage("What AN AR");
     }
 
     public Player getBukkitPlayer() {
