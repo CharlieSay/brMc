@@ -19,7 +19,6 @@ import java.util.logging.Level;
 
 public class BattleRoyaleMinecraft extends JavaPlugin{
 
-    private Scoreboard scoreboard;
     private BukkitScheduler scheduler;
 
     public static BattleRoyaleMinecraft getBrInstance() {
@@ -35,6 +34,7 @@ public class BattleRoyaleMinecraft extends JavaPlugin{
     @Override
     public void onEnable(){
         PluginLogger.getGlobal().log(Level.INFO,"Enabled - brMc");
+        GameController.setGameState(GameState.PRE_LOBBY);
         PluginManager pluginManager = Bukkit.getPluginManager();
         pluginManager.registerEvents(new PickupListener(),this);
         pluginManager.registerEvents(new ProjectileListener(),this);

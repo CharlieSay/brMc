@@ -1,5 +1,6 @@
 package co.uk.ocelotcr.Listener;
 
+import co.uk.ocelotcr.Controller.ItemController;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Arrow;
@@ -16,45 +17,29 @@ import java.util.logging.Level;
 
 public class ProjectileListener implements Listener {
 
-    public static int shootTimer = 20;
-
     @EventHandler
     public void projectileLaunch(ProjectileLaunchEvent e){
         ProjectileSource projectileSource = e.getEntity().getShooter();
-        if (projectileSource instanceof Player){
+        if (projectileSource instanceof Player) {
             Player player = (Player) projectileSource;
             ItemStack itemInMainHand = player.getInventory().getItemInMainHand();
-            Bukkit.getLogger().log(Level.INFO,itemInMainHand.getItemMeta().toString());
+            Bukkit.getLogger().log(Level.INFO, itemInMainHand.getItemMeta().toString());
+            if (ItemController.isItemOnlist(itemInMainHand.getType())) {
+                Bukkit.getLogger().log(Level.INFO," Is On List");
+            }
+            else {
+                Bukkit.getLogger().log(Level.INFO," Isnt On List");
+            }
         }
 
-    }
-
-    private void runTask(Player p){
-        if (p.getInventory().getItemInMainHand().getItemMeta().getDisplayName() == (ChatColor.BLUE+"Assault Rifle - Rare")){
-            Bukkit.getScheduler().scheduleSyncRepeatingTask(BattleRoyaleMinecraft.getBrInstance(),
-                    () -> {
-                        shootTimer -= 1;
-                        p.launchProjectile(Arrow.class).setCritical(true);
-                        if (shootTimer==0){
-                            Bukkit.getScheduler().cancelAllTasks();
-                        }
-                    },0L,10L);
-        }
-    }
-
-    @EventHandler
-    public void projectileHit(ProjectileHitEvent e){
-        ProjectileSource projectileSource = e.getEntity().getShooter();
-        if (projectileSource instanceof Player){
-           Player player = (Player) projectileSource;
-        }
     }
 
     @EventHandler
     public void EntityDamageByEntityEvent(EntityDamageByEntityEvent e){
         if (e.getEntity() instanceof Player){
-            Player p = (Player) e.getEntity();
             e.setCancelled(true);
+            Player p = (Player) e.getEntity();
+
         }
     }
 }

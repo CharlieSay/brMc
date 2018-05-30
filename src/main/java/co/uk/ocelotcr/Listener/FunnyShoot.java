@@ -6,9 +6,9 @@ import org.bukkit.entity.Player;
 
 import java.util.logging.Level;
 
-import static co.uk.ocelotcr.Listener.ProjectileListener.shootTimer;
-
 public class FunnyShoot {
+
+    private int shootTimer = 20;
 
     public void shootemUp(Player p, int RateOfFire){
         Bukkit.getLogger().log(Level.INFO,"ShootEmEUp");
